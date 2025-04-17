@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imran Aziz Tamboli Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      min-height: 100vh;
+      background: linear-gradient(to right, #f5e1da, #d6d1f5, #c9f0ff);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-logo {
+      color: white;
+      font-size: 28px;
+      font-family: 'Monoton', cursive;
+      font-weight: 100;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #ffe082;
+      text-shadow: 1px 1px 2px #00000040;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* MAIN HEADER SECTION */
+    header.container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 150px 80px 60px;
+      min-height: 100vh;
+    }
+
+    .left {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 36px;
+      color: black;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      margin-top: 30px;
+    }
+
+    .intro h1 {
+      font-size: 50px;
+      color: #222;
+    }
+
+    .intro p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    .orange {
+      color: #ff7a00;
+      font-weight: bold;
+    }
+
+    .blue {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .hire-btn {
+      padding: 12px 24px;
+      background-color: #5a4fcf;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hire-btn:hover {
+      background: linear-gradient(135deg,  #ee0979, #ff6a00);
+  transform: translateY(-2px);
+    }
+
+    .profile-img {
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      height: auto;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 1024px) {
+      header.container {
+        padding: 140px 40px 60px;
+      }
+
+      .intro h1 {
+        font-size: 40px;
+      }
+
+      .intro p {
+        font-size: 18px;
+      }
+
+      .navbar ul {
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    padding: 10px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+    color:white;
+
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar ul li a:hover {
+    color: #000;
+    border-radius: 6px;
+    transform: scale(1.05);
+  }
+
+      header.container {
+        flex-direction: column;
+        padding: 80px 30px 40px;
+        text-align: center;
+      }
+
+      .left {
+        padding: 0;
+      }
+
+      .right {
+        margin-top: 40px;
+      }
+
+      .intro h1 {
+        font-size: 36px;
+      }
+
+      .intro p {
+        font-size: 16px;
+      }
+
+      .profile-img {
+        max-width: 240px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 28px;
+      }
+
+      .intro h1 {
+        font-size: 28px;
+      }
+
+      .intro p {
+        font-size: 14px;
+      }
+
+      .hire-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .navbar ul li a {
+        font-size: 16px;
+      }
+    }
+
+   .resume-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  transform: translateY(-2px);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="nav-logo">IMU17</h2>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN HEADER -->
+  <header class="container">
+    <div class="left">
+      <div class="intro">
+        <img src="HIM-BUBBLE.png" alt="Bubble Icon" style="width: 70px; margin-left: 50px;" />
+        <h1 style="font-family: 'Times New Roman', Times, serif;">IMRAN AZIZ TAMBOLI</h1>
+        <p>
+          <span class="orange">Frontend Developer</span> and
+          <span class="blue">Designer</span> creating clean, functional websites.
+        </p>
+        <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+        <button class="hire-btn">HIRE ME</button>
+      </div>
+    </div>
+    <div class="right">
+      <img src="WhatsApp Image 2025-04-16 at 21.39.36_305b48a7.jpg" alt="Imran Tamboli" class="profile-img" />
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

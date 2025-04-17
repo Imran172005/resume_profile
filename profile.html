@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imran Aziz Tamboli - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(to right, #f5e1da, #d6d1f5, #c9f0ff);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #333;
+    }
+    .navbar {
+      width: 100%;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .navbar .logo {
+      color: #ffffff;
+      font-size: 26px;
+      font-family: 'Monoton', cursive;
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .navbar ul li a:hover {
+      color: #ffe082;
+      text-shadow: 1px 1px 2px #00000040;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .wrapper {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      padding-top: 80px;
+    }
+    .left-panel {
+      width: 30%;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px);
+    }
+    .right-panel {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(to right, #f5e1da, #d6d1f5, #c9f0ff);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #333;
+    }
+    .profile-heading {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #4a148c;
+    }
+    .avatar img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .description {
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 50px;
+    }
+
+    /* NEW CERTIFICATE SLIDES STYLES */
+    .slideshow-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 20px 0;
+    }
+    .mySlides {
+      width: 300px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .mySlides .text {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .navbar ul li {
+    padding: 10px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+    color:white;
+
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar ul li a:hover {
+    color: #000;
+    border-radius: 6px;
+    transform: scale(1.05);
+  }
+      .wrapper {
+        flex-direction: column;
+        padding-top: 60px;
+      }
+      .left-panel {
+        display: none;
+      }
+      .right-panel {
+        padding: 40px 20px;
+      }
+      .profile-heading {
+        font-size: 36px;
+      }
+      .name {
+        font-size: 28px;
+      }
+      .description {
+        font-size: 16px;
+      }
+      .skills {
+        font-size: 14px;
+      }
+      .slideshow-container {
+        gap: 20px;
+        
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .right-panel {
+        padding: 20px;
+      }
+      .avatar img {
+        width: 180px;
+        height: 180px;
+      }
+      .profile-heading {
+        font-size: 28px;
+      }
+      .name {
+        font-size: 24px;
+      }
+      .description {
+        font-size: 14px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">IMU17</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">Project</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <div class="wrapper">
+    <div class="right-panel">
+      <div class="profile-heading">PROFILE</div>
+      <div class="avatar"><img src="i am.jpg" alt="Imran Aziz Tamboli"></div>
+      <div class="name" style="font-family: 'Times New Roman', Times, serif;">Imran Aziz Tamboli</div>
+      <div class="description">Computer Science and Data Science Student</div>
+      <div class="skills-section">
+        <div class="section-title" style="font-family: 'Times New Roman', Times, serif;">Skills</div>
+        <div class="skills">C, C++, HTML, CSS, JavaScript, React, PHP, Figma</div>
+      </div>
+      <div class="certificates-section">
+        <div class="section-title" style="font-family: 'Times New Roman', Times, serif;">Certificates</div>
+        <marquee scrolldelay="15" scrollamount="10" behavior="scroll" loop="infinite" direction="left">
+          <div class="slideshow-container">
+            <div class="mySlides">
+              <img src="certi/C,CPP.png" alt="Certificate of C and Cpp">
+              <div class="text">Certificate of C and Cpp</div>
+            </div>
+            <div class="mySlides">
+              <img src="certi/HTML.jpg" alt="Certificate of HTML">
+              <div class="text">Certificate of HTML</div>
+            </div>
+            <div class="mySlides">
+              <img src="certi/CSS.jpg" alt="Certificate of HTML">
+              <div class="text">Certificate of CSS</div>
+            </div>
+          </div>
+        </marquee>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-links');
+      menu.classList.toggle('show');
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('show');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
