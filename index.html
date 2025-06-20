@@ -145,6 +145,70 @@
       .navbar ul.show { display: flex; }
       .menu-toggle { display: block; }
     }
+    
+    #contact h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .contact-form {
+    max-width: 600px;
+    margin: auto;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .contact-form button {
+    background: #ff6a00;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+  }
+  .contact-form button:hover {
+    background: #ee0979;
+  }
+  #sms-status {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .github-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #24292e, #0366d6);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.github-btn:hover {
+  background: linear-gradient(135deg, #0366d6, #28a745);
+  transform: translateY(-2px);
+}
+
   </style>
 </head>
 <body>
@@ -177,27 +241,47 @@
   </section>
 
   <section id="projects">
+
     <h2>Projects</h2>
-    <h3>1. Paan Ecommerce Website</h3>
+    <h3>1. Chat-app </h3>
+    <p>Your real-time chat app uses React, Zustand for state, Express.js, and Socket.IO for instant messaging. Users can log in, chat live, and see online status updates. Zustand manages global states like messages and active chats. The app is responsive and scalable, with optional MongoDB/Firebase for storing chat history. Future upgrades include read receipts, typing indicators, and group chats.</p>
+    <div class="image-grid">
+      <div class="image-placeholder"><img src="project/Screenshot 2025-06-20 012953.png" alt="Paan website"></div>
+      <div class="image-placeholder"><img src="project/Screenshot 2025-06-20 013039.png" alt="Paan website"></div>
+      <div class="image-placeholder"><img src="project/Screenshot 2025-06-20 013051.png" alt="Paan website"></div>
+    </div>
+          <br>
+    <h3>2. Paan Ecommerce Website</h3>
     <p>A sleek frontend showcasing traditional and modern Paan with responsive design.</p>
     <div class="image-grid">
       <div class="image-placeholder"><img src="project/pan.png" alt="Paan website"></div>
       <div class="image-placeholder"><img src="project/pan2.png" alt="Paan website"></div>
     </div>
-
-    <h3>2. Typing Website</h3>
+       <br>
+    <h3>3. Typing Website</h3>
     <p>Clean typing UI for improving speed and accuracy with responsive layout.</p>
     <div class="image-grid">
       <div class="image-placeholder"><img src="project/typing.png" alt="Typing site"></div>
       <div class="image-placeholder"><img src="project/typing2.png" alt="Typing site"></div>
     </div>
-
-    <h3>3. Mechanical Dept Course Schedule</h3>
+        <br>
+    <h3>4. Mechanical Dept Course Schedule</h3>
     <p>Built with HTML, CSS, and JS for structured student planning under Prarambh Development Cell.</p>
     <div class="image-grid">
       <div class="image-placeholder"><img src="project/cours.png" alt="Schedule"></div>
       <div class="image-placeholder"><img src="project/cours2.png" alt="Schedule"></div>
     </div>
+
+     <br>
+  <h3>More Projects</h3>
+ <p style="text-align: center;">
+  <a href="https://github.com/Imran172005?tab=repositories" target="_blank" class="github-btn">🌟 View My GitHub repositories</a>
+</p>
+
+
+ 
+
+
   </section>
 
   <section id="profile">
@@ -236,8 +320,27 @@
   </div>
 </section>
 
+<!-- Contact Section -->
+<section id="contact" style="padding: 60px 20px;  background: linear-gradient(to right, #f5e1da, #d6d1f5, #c9f0ff);">
+  <h2>Contact Me via SMS</h2>
+  
+  <div class="contact-form">
+    <form id="sms-form">
+      <input type="text" id="phone" placeholder="Phone Number (e.g. +91XXXXXXXXXX)" required>
+      <textarea id="text" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send SMS</button>
+    </form>
+    <p id="sms-status"></p>
+  </div>
+</section>
+
 <footer style="background: #333; color: #fff; text-align: center; padding: 20px 10px;">
   <p>&copy; 2025 Imran Tamboli. All Rights Reserved.</p>
+   <div class="social-links" style="margin-top: 20px;">
+    <a href="https://www.instagram.com/_imran__888/" target="_blank">Instagram</a>
+    <a href="https://github.com/imrantamboli17" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/imran-tamboli-64ab27288/" target="_blank">LinkedIn</a>
+  </div>
 </footer>
 
 <script>
@@ -263,5 +366,35 @@
       document.getElementById("nav-links").classList.toggle("show");
     }
   </script>
+<script>
+  document.getElementById('sms-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const phone = document.getElementById('phone').value;
+    const text = document.getElementById('text').value;
+
+    fetch('https://textbelt.com/text', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        phone: phone,
+        message: text,
+        key: 'textbelt' // Free key: 1 SMS/day
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      const status = document.getElementById('sms-status');
+      if (data.success) {
+        status.innerText = "✅ SMS sent successfully!";
+        status.style.color = 'green';
+      } else {
+        status.innerText = "❌ Failed to send SMS.";
+        status.style.color = 'red';
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
